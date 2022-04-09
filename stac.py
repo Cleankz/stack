@@ -7,8 +7,8 @@ class Stack:
 
     def pop(self):
         if len(self.stack) != 0:
-            a = self.stack[0]
-            del self.stack[0]
+            a = self.stack[len(self.stack)-1]
+            del self.stack[len(self.stack)-1]
             return a
         return None # если стек пустой
 
@@ -18,7 +18,7 @@ class Stack:
 
     def peek(self):
         if len(self.stack) != 0:
-            return self.stack[0]
+            return self.stack[len(self.stack)-1]
         return None # если стек пустой
 
 def balans(string):
