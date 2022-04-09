@@ -21,7 +21,7 @@ class DivTests(unittest.TestCase):
         for i in range(100):
             s.push(i)
         for i in range(100):
-            self.assertEqual(s.peek(),0)
+            self.assertEqual(s.peek(),99)
     def test_size(self):
         s = Stack()
         for i in range(100):
