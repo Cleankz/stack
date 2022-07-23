@@ -2,38 +2,38 @@ class Stack:
     def __init__(self):
         self.stack = []
 
-    def size(self):
+    def size_of_stack(self):#size - size_of_stack
         return len(self.stack)
 
-    def pop(self):
+    def pop_elem(self):#pop - pop_elem
         if len(self.stack) != 0:
             a = self.stack[len(self.stack)-1]
             del self.stack[len(self.stack)-1]
             return a
         return None # если стек пустой
 
-    def push(self, value):
+    def push_elem(self, value):# push - push_elem
         self.stack.insert(len(self.stack),value)
         # ваш код
 
-    def peek(self):
+    def peek_elem(self):#peek - peek_elem
         if len(self.stack) != 0:
             return self.stack[len(self.stack)-1]
         return None # если стек пустой
 
-def balans(string):
+def balans_in_stack(string):# balans - balans_in_stack
     stack = Stack()
     for i in string:
-        stack.push(i)
+        stack.push_elem(i)
     sum_open = 0
     sum_close = 0
-    while stack.size() > 0:
+    while stack.size_of_stack() > 0:
         l = stack.size
-        if stack.peek() == ")":
+        if stack.peek_elem() == ")":
             return False
-        if stack.pop() =="(" and stack.size() == 1:
+        if stack.pop_elem() =="(" and stack.size_of_stack() == 1:
             return False
-        if stack.pop() =="(":
+        if stack.pop_elem() =="(":
             sum_open +=1
         else:
             sum_close +=1
