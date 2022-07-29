@@ -7,9 +7,9 @@ class Stack:
 
     def pop_elem(self):#pop - pop_elem
         if len(self.stack) != 0:
-            a = self.stack[len(self.stack)-1]
+            RESULT_ARRAY = self.stack[len(self.stack)-1] # a - RESULT_ARRAY
             del self.stack[len(self.stack)-1]
-            return a
+            return RESULT_ARRAY
         return None # если стек пустой
 
     def push_elem(self, value):# push - push_elem
@@ -22,18 +22,18 @@ class Stack:
         return None # если стек пустой
 
 def balans_in_stack(string):# balans - balans_in_stack
-    stack = Stack()
+    STACK = Stack() # s - STACK
     for i in string:
-        stack.push_elem(i)
+        STACK.push_elem(i)
     sum_open = 0
     sum_close = 0
-    while stack.size_of_stack() > 0:
-        l = stack.size
-        if stack.peek_elem() == ")":
+    while STACK.size_of_stack() > 0:
+        l = STACK.size
+        if STACK.peek_elem() == ")":
             return False
-        if stack.pop_elem() =="(" and stack.size_of_stack() == 1:
+        if STACK.pop_elem() =="(" and STACK.size_of_stack() == 1:
             return False
-        if stack.pop_elem() =="(":
+        if STACK.pop_elem() =="(":
             sum_open +=1
         else:
             sum_close +=1
